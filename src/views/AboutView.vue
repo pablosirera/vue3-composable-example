@@ -1,5 +1,11 @@
+<script setup>
+import { useUser } from "@/composables/useUser";
+
+const { user } = useUser();
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>User: {{ user.name }}</h1>
   </div>
 </template>

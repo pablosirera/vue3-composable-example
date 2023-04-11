@@ -1,18 +1,10 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
-</template>
+<script setup>
+import { useUser } from "@/composables/useUser";
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
-export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
+const { user, setUser } = useUser();
 </script>
+
+<template>
+  <h1>{{ user.name }}</h1>
+  <button @click="setUser({ name: 'Juan' })">Cambiar nombre</button>
+</template>
